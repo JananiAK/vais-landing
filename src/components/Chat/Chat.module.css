@@ -1,0 +1,69 @@
+/* src/components/Chat.module.css */
+
+.chatContainer {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  width: 300px;
+  padding: 8px;
+  /* max-width: 600px; */
+  margin: 0 auto;
+  border-radius: 28px;
+  /* border: 1px solid var(--brand); */
+  background-color: var(--text);
+  /* Use background color variable */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+}
+
+.messageList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messageList::-webkit-scrollbar-thumb {
+  background: var(--brand);
+  /* background-blend-mode: color; */
+  /* background-color: rgba(0, 0, 0, 0.2); */
+  border-radius: 10px;
+}
+
+.messageList::-webkit-scrollbar-track {
+  /* background: rgba(0, 0, 0, 0.1); */
+  border-radius: 10px;
+}
+
+.messageList {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  background-color: var(--text);
+  display: flex;
+  flex-direction: column;
+  /* Stack messages vertically */
+  gap: 10px;
+  /* Add spacing between messages */
+}
+
+.messageList .message {
+  display: block;
+  max-width: 70%;
+  /* Ensure messages do not stretch too wide */
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+/* .messageList .message.user {
+    background-color: #d1e7ff;
+
+    align-self: flex-end;
+
+}
+
+.messageList .message.system {
+    background-color: #e8e8e8;
+
+    align-self: flex-start;
+
+} */

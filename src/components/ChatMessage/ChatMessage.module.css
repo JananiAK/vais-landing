@@ -1,0 +1,25 @@
+.message {
+  font-size: 10pt;
+  max-width: 70%;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 20px;
+  /* margin: 100px 0; */
+  display: inline-block;
+  word-wrap: break-word;
+  /* Ensure long words break correctly */
+}
+
+.user {
+  background-color: var(--bg);
+  color: var(--text);
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.system {
+  background-color: var(--brand);
+  color: var(--bg);
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}

@@ -1,0 +1,83 @@
+/* src/App.css */
+
+:root {
+  --bg: #212226;
+  --brand: #cff250;
+  --text: #fff;
+  --bg-sec: #525259;
+  --brand-sec: #e2f263;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.223);
+}
+
+.App {
+  background-color: var(--bg);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  /* Space between Logo and Chat */
+  align-items: center;
+  height: 100vh;
+  width: 90vw;
+  /* Full viewport width */
+  padding: 0 20px;
+  /* Padding on left and right */
+  box-sizing: border-box;
+  /* Include padding in width and height calculations */
+  /* background-color: var(--bg); */
+  /* Set background color */
+}
+
+/* Style for the Logo component */
+
+.Logo {
+  max-width: 150px;
+  /* Limit the width of the Logo */
+  margin-right: 20px;
+  /* Space between Logo and Chat */
+}
+
+/* Style for the chat container */
+
+.chatContainer {
+  position: relative;
+  width: 50%;
+  /* Width of the chat component */
+  /* height: 500px; */
+  /* padding: 8px; */
+  /* Height of the chat component */
+  /* box-shadow: var(--shadow); */
+  /* Add shadow for depth */
+  /* border-radius: 28px; */
+  /* Rounded corners to mimic a phone screen */
+  /* background-color: var(--text); */
+  /* Background color */
+  /* color: var(--text); */
+  /* Text color */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* Stack header, messages, and footer vertically */
+  /* overflow: hidden; */
+  /* Hide overflow to maintain rounded corners */
+}
+
+/* Ensure alignment in the center with equal gaps on both sides */
+
+@media (min-width: 768px) {
+  .App {
+    padding: 0 40px;
+    /* Adjust padding for larger screens */
+    justify-content: space-between;
+    /* Space between Logo and Chat */
+  }
+}
+
+@media (max-width: 768px) {
+  .chatContainer {
+    width: 90%;
+    /* Adjust width on smaller screens */
+    height: 90%;
+    /* Adjust height on smaller screens */
+  }
+}

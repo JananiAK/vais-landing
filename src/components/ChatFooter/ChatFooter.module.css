@@ -1,0 +1,42 @@
+/* src/components/ChatFooter.module.css */
+
+.chatFooter {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* border-top: 1px solid var(--brand); */
+  background-color: var(--bg);
+  position: relative;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.input {
+  width: calc(100% - 60px);
+  /* Adjust width to fit with the send button */
+  padding: 10px;
+  color: var(--text);
+  background-color: var(--bg);
+  border: 1px solid var(--brand);
+  border-radius: 15px;
+  outline: none;
+}
+
+.button {
+  text-align: left;
+  font-size: 0.9rem;
+  width: 30px;
+  height: 30px;
+  background-color: var(--brand);
+  /* Use the brand color variable */
+  color: var(--bg);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
