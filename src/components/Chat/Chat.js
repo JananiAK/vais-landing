@@ -27,7 +27,7 @@ const initialMessages = [
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
-  const [email, setEmail] = useState(null);
+  const [setEmail] = useState(null);
   const messageEndRef = useRef(null); // Initialize useRef
 
   useEffect(() => {
