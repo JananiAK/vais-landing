@@ -8,26 +8,39 @@ import Styles from "./Chat.module.css"; // Correctly import CSS module
 const initialMessages = [
   {
     id: 1,
-    text: "Hey there! 👋 Tired of the same old ecommerce routine? Brace yourself—something revolutionary is on the horizon!",
+    text: "Hey there! 👋 Ready to shake up your shopping experience? Something exciting is coming your way!",
     sender: "system",
   },
-  { id: 2, text: "What's coming?", sender: "user" },
+  {
+    id: 2,
+    text: "What’s it all about?",
+    sender: "user",
+  },
   {
     id: 3,
-    text: "We're transforming shopping with cutting-edge AI chat. Imagine a personal assistant guiding you to perfect finds effortlessly.",
+    text: "Imagine having a personal shopping assistant right in your chat. Our new AI platform will make finding and buying what you need easier than ever. Get personalized recommendations instantly through a simple conversation!",
     sender: "system",
   },
-  { id: 4, text: "Intrigued?", sender: "system" },
+  {
+    id: 4,
+    text: "That sounds cool! How does it work?",
+    sender: "user",
+  },
   {
     id: 5,
-    text: "Share your email below, and we'll keep you in the loop!",
+    text: "You’ll chat with our AI assistant, which learns your preferences and helps you discover the perfect products. It’s all about making your shopping experience smooth and enjoyable.",
+    sender: "system",
+  },
+  {
+    id: 6,
+    text: "Want to be one of the first to try it out? Drop your email below, and we’ll keep you updated with all the exciting details and exclusive previews!",
     sender: "system",
   },
 ];
 
 const Chat = () => {
   const [messages, setMessages] = useState([]);
-  const [setEmail] = useState(null);
+  const [email, setEmail] = useState(null);
   const messageEndRef = useRef(null); // Initialize useRef
 
   useEffect(() => {
@@ -52,6 +65,7 @@ const Chat = () => {
   }, [messages]);
 
   const handleSend = (text) => {
+    console.log(email);
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const newMessages = [];
 

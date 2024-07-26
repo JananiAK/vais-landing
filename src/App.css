@@ -73,11 +73,20 @@
   }
 }
 
+/* Add this to your existing CSS */
+
+/* Hide profile section on mobile */
+
 @media (max-width: 768px) {
+  .profile {
+    display: none;
+    /* Hide profile on mobile screens */
+  }
   .chatContainer {
-    width: 90%;
+    margin: 0;
+    width: 100%;
     /* Adjust width on smaller screens */
-    height: 90%;
+    height: 100%;
     /* Adjust height on smaller screens */
   }
 }

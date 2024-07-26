@@ -1,5 +1,4 @@
-// src/App.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "./App.css";
 import Profile from "./components/ProfileSection/ProfileSection";
@@ -7,7 +6,18 @@ import ParticleRingBackground from "./components/ParticleRingBackground/Particle
 import Chat from "./components/Chat/Chat";
 
 function App() {
-  const [showProfile, setShowProfile] = useState(true);
+  const [showProfile, setShowProfile] = useState(window.innerWidth >= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setShowProfile(window.innerWidth >= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="App">

@@ -25,7 +25,7 @@ const ChatHeader = ({ onShowProfile }) => (
       </svg>{" "}
     </button>{" "}
     <img src={profile} alt="Profile" className={Styles.profilePic} />{" "}
-    <span className={Styles.productName}> VAIS </span>{" "}
+    <span className={Styles.productName}> VAIZZ </span>{" "}
   </motion.div>
 );
 

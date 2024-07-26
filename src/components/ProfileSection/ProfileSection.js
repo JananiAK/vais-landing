@@ -12,11 +12,11 @@ const ProfileSection = () => (
     <div className={styles.profileContainer}>
       <div className={styles.profileHeader}>
         <img src={profileImage} alt="Profile" className={styles.profileImage} />{" "}
-        <div className={styles.profileName}> Your Name </div>{" "}
+        <div className={styles.profileName}> Vaizz </div>{" "}
       </div>{" "}
       <div className={styles.profileBio}>
-        This is a brief bio about yourself.Mention your role, interests, or any
-        other relevant information.Keep it concise but informative.{" "}
+        Welcome!I’ m your Vaizz, here to make shopping easy by helping you find
+        and buy products through our conversation.{" "}
       </div>{" "}
       <div className={styles.profileContact}>
         Contact: your.email @example.com{" "}
