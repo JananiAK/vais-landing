@@ -2,13 +2,7 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
-import {
-  motion,
-  useMotionTemplate,
-  useMotionValue,
-  useSpring,
-  useDragControls,
-} from "framer-motion";
+import { motion, useDragControls } from "framer-motion";
 import { pointsInner, pointsOuter } from "./utils";
 import logo from "../../assets/Logo.png"; // Assuming your logo SVG is located here
 import Styles from "./ParticleRingBackground.module.css"; // Assuming you have some CSS module for styling

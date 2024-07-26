@@ -4,17 +4,13 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 500px;
-  width: 300px;
-  padding: 8px;
-  /* max-width: 600px; */
-  margin: 0 auto;
-  border-radius: 28px;
-  /* border: 1px solid var(--brand); */
-  background-color: var(--text);
-  /* Use background color variable */
+  height: 85vh;
+  width: 60vw;
+  border: 0.5px solid var(--bg-sec);
+  background-color: rgba(33, 34, 38, 0.7);
+  backdrop-filter: blur(5px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for depth */
+  border-radius: 20px;
 }
 
 .messageList::-webkit-scrollbar {
@@ -23,13 +19,10 @@
 
 .messageList::-webkit-scrollbar-thumb {
   background: var(--brand);
-  /* background-blend-mode: color; */
-  /* background-color: rgba(0, 0, 0, 0.2); */
   border-radius: 10px;
 }
 
 .messageList::-webkit-scrollbar-track {
-  /* background: rgba(0, 0, 0, 0.1); */
   border-radius: 10px;
 }
 
@@ -37,33 +30,66 @@
   flex: 1;
   padding: 10px;
   overflow-y: auto;
-  background-color: var(--text);
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  /* Stack messages vertically */
   gap: 10px;
-  /* Add spacing between messages */
 }
 
 .messageList .message {
   display: block;
   max-width: 70%;
-  /* Ensure messages do not stretch too wide */
   padding: 10px;
   border-radius: 10px;
   font-size: 16px;
 }
 
-/* .messageList .message.user {
-    background-color: #d1e7ff;
-
-    align-self: flex-end;
-
+.messageList .message.user {
+  background-color: var(--brand);
+  align-self: flex-end;
 }
 
 .messageList .message.system {
-    background-color: #e8e8e8;
+  background-color: var(--bg-sec);
+  align-self: flex-start;
+}
 
-    align-self: flex-start;
+.backButton {
+  display: none;
+  background: var(--bg-sec);
+  color: var(--text);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 10px;
+}
 
-} */
+.showProfileButton {
+  display: none;
+  background: var(--brand);
+  color: var(--bg);
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .chatContainer {
+    width: 100%;
+    height: 100%;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .backButton {
+    display: block;
+  }
+  .showProfileButton {
+    display: block;
+  }
+}

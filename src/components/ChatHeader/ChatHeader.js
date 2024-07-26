@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import profile from "../../assets/Logo.png";
 import Styles from "./ChatHeader.module.css";
 
-const ChatHeader = () => (
+const ChatHeader = ({ onShowProfile }) => (
   <motion.div
     className={Styles.chatHeader}
     initial={{ opacity: 0, y: -50 }}
     animate={{ opacity: 1, y: 0 }}>
-    <button className={Styles.backButton}>
+    <button className={Styles.backButton} onClick={onShowProfile}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

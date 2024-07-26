@@ -1,8 +1,8 @@
 /* src/components/ChatFooter.module.css */
 
 .chatFooter {
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  /* border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px; */
   display: flex;
   align-items: center;
   padding: 10px;

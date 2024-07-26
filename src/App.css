@@ -1,5 +1,3 @@
-/* src/App.css */
-
 :root {
   --bg: #212226;
   --brand: #cff250;
@@ -14,14 +12,15 @@
 }
 
 .content {
+  height: 100vh;
   display: flex;
   justify-content: space-between;
   /* Space between Logo and Chat */
   align-items: center;
-  height: 100vh;
-  width: 90vw;
+  /* height: 100vh; */
+  /* width: 90vw; */
   /* Full viewport width */
-  padding: 0 20px;
+  /* padding: 0 20px; */
   /* Padding on left and right */
   box-sizing: border-box;
   /* Include padding in width and height calculations */
@@ -31,8 +30,9 @@
 
 /* Style for the Logo component */
 
-.Logo {
-  max-width: 150px;
+.profile {
+  /* max-width: 150px; */
+  z-index: 1;
   /* Limit the width of the Logo */
   margin-right: 20px;
   /* Space between Logo and Chat */
@@ -41,8 +41,8 @@
 /* Style for the chat container */
 
 .chatContainer {
-  position: relative;
-  width: 50%;
+  /* position: relative; */
+  /* width: 50%; */
   /* Width of the chat component */
   /* height: 500px; */
   /* padding: 8px; */
