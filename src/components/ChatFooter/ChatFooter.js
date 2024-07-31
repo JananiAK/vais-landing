@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { database } from "../../firebase";
+import { ref, push, serverTimestamp } from "firebase/database";
 import Styles from "./ChatFooter.module.css";
 
 const ChatFooter = ({ onSend }) => {
@@ -10,6 +12,14 @@ const ChatFooter = ({ onSend }) => {
 
   const handleSend = () => {
     if (text.trim()) {
+      // Save the email to Firebase Realtime Database
+      const emailsRef = ref(database, "emails");
+      push(emailsRef, {
+        email: text.trim(),
+        timestamp: serverTimestamp(),
+      });
+
+      // Call the onSend function with the text
       onSend(text);
       setText("");
     }

@@ -7,6 +7,15 @@
   --shadow: 0 4px 6px rgba(0, 0, 0, 0.223);
 }
 
+/* :root {
+  --bg: #f2f2f2;
+  --brand: #f24150;
+  --text: #fff;
+  --bg-sec: ;
+  --brand-sec: #f20530;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.223);
+} */
+
 .App {
   background-color: var(--bg);
 }
