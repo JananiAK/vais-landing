@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import styles from "./ProfileSection.module.css";
 import profileImage from "../../assets/Logo.png"; // Update with the path to your logo image
 
+let mail = "info.tribetek@gmail.com";
+
 const ProfileSection = () => (
   <motion.div
     className={styles.ProfileSection}
@@ -12,15 +14,13 @@ const ProfileSection = () => (
     <div className={styles.profileContainer}>
       <div className={styles.profileHeader}>
         <img src={profileImage} alt="Profile" className={styles.profileImage} />{" "}
-        <div className={styles.profileName}> Vaizz </div>{" "}
+        <div className={styles.profileName}> Aica </div>{" "}
       </div>{" "}
       <div className={styles.profileBio}>
-        Welcome!I’ m your Vaizz, here to make shopping easy by helping you find
+        Welcome!I’ m your Aica, here to make shopping easy by helping you find
         and buy products through our conversation.{" "}
       </div>{" "}
-      <div className={styles.profileContact}>
-        Contact: your.email @example.com{" "}
-      </div>{" "}
+      <div className={styles.profileContact}> {mail} </div>{" "}
     </div>{" "}
   </motion.div>
 );

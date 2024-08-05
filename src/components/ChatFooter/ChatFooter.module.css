@@ -29,9 +29,9 @@
   font-size: 0.9rem;
   width: 30px;
   height: 30px;
-  background-color: var(--brand);
+  background-color: var(--red);
   /* Use the brand color variable */
-  color: var(--bg);
+  color: var(--brand);
   border: none;
   border-radius: 50%;
   cursor: pointer;

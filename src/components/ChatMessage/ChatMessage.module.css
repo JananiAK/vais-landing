@@ -1,5 +1,5 @@
 .message {
-  font-size: 10pt;
+  font-size: 12pt;
   max-width: 70%;
   text-align: left;
   padding: 8px 12px;
@@ -11,15 +11,15 @@
 }
 
 .user {
-  background-color: var(--text);
+  background-color: var(--brand);
   color: var(--bg);
   align-self: flex-end;
   border-bottom-right-radius: 0;
 }
 
 .system {
-  background-color: var(--brand);
-  color: var(--bg);
+  background-color: var(--bg-sec);
+  color: var(--text);
   align-self: flex-start;
   border-bottom-left-radius: 0;
 }
