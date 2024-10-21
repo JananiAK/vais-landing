@@ -1,0 +1,10 @@
+/* src/components/ProductCarousel/ProductCarousel.css */
+.product-carousel {
+  width: 100%; /* Make sure the carousel takes the full width */
+  margin: 20px 0; /* Add some margin for spacing */
+}
+
+.slick-slide {
+  display: flex; /* Flex to center the cards */
+  justify-content: center; /* Center the product cards */
+}

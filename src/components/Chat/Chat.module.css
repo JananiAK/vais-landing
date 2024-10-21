@@ -1,4 +1,48 @@
-/* src/components/Chat.module.css */
+/* Add this to your existing CSS file */
+.productCardsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 5px; /* Add some space between messages and products */
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 5px;
+  width: 50px; /* Adjust size as needed */
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-price {
+  color: rgb(161, 61, 71);
+}
+
+.product-description {
+  font-size: 12px;
+}
+
+.product-action {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 .chatContainer {
   overflow: hidden;
@@ -76,6 +120,11 @@
   font-size: 1rem;
   margin: 10px;
   border-radius: 10px;
+}
+
+/* Chat.module.css */
+.productCarouselContainer {
+  margin: 20px 0; /* Space above and below the carousel */
 }
 
 @media (max-width: 768px) {

@@ -1,8 +1,8 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from "react";
 
-const LazyChat = lazy(() => import('./Chat'));
+const LazyChat = lazy(() => import("./Chat"));
 
-const Chat = props => (
+const Chat = (props) => (
   <Suspense fallback={null}>
     <LazyChat {...props} />
   </Suspense>

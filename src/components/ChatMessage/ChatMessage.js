@@ -1,4 +1,4 @@
-// src/components/ChatMessage.js
+// src/components/ChatMessage/ChatMessage.js
 import React from "react";
 import { motion } from "framer-motion";
 import Styles from "./ChatMessage.module.css";
@@ -10,8 +10,7 @@ const ChatMessage = ({ text, sender }) => (
     className={`${Styles.message} ${
       sender === "user" ? Styles.user : Styles.system
     }`}>
-    {" "}
-    {text}{" "}
+    {text}
   </motion.div>
 );
 

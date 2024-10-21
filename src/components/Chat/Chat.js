@@ -1,9 +1,12 @@
+// src/components/Chat/Chat.js
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import ChatHeader from "../ChatHeader/ChatHeader";
 import ChatMessage from "../ChatMessage/ChatMessage";
 import ChatFooter from "../ChatFooter/ChatFooter";
-import Styles from "./Chat.module.css"; // Correctly import CSS module
+import ProductData from "../ProductData/ProductData"; // Import product data
+import Styles from "./Chat.module.css";
+import ProductCarousel from "../ProductCard/ProductCarousel"; // Import ProductCarousel component
 
 const initialMessages = [
   {
@@ -18,7 +21,7 @@ const initialMessages = [
   },
   {
     id: 3,
-    text: "Imagine having a personal shopping assistant right in your chat. Our new AI platform will make finding and buying what you need easier than ever. Get personalized recommendations instantly through a simple conversation!",
+    text: "Imagine having a personal shopping assistant right in your chat...",
     sender: "system",
   },
   {
@@ -28,73 +31,47 @@ const initialMessages = [
   },
   {
     id: 5,
-    text: "You’ll chat with our AI assistant, which learns your preferences and helps you discover the perfect products. It’s all about making your shopping experience smooth and enjoyable.",
+    text: "You’ll chat with our AI assistant...",
     sender: "system",
   },
   {
     id: 6,
-    text: "Want to be one of the first to try it out? Drop your email below, and we’ll keep you updated with all the exciting details and exclusive previews!",
+    text: "Want to be one of the first to try it out?",
     sender: "system",
   },
 ];
 
 const Chat = () => {
-  const [messages, setMessages] = useState([]);
-  const [email, setEmail] = useState(null);
-  const messageEndRef = useRef(null); // Initialize useRef
+  const [messages, setMessages] = useState(initialMessages);
+  const [showProducts, setShowProducts] = useState(false); // Control when to show products
+  const messageEndRef = useRef(null); // Scroll control
 
   useEffect(() => {
-    const interval = 1000; // Delay between messages in milliseconds
-    initialMessages.forEach((msg, index) => {
-      setTimeout(() => {
-        setMessages((prevMessages) => {
-          // Check if the message is already present
-          if (!prevMessages.some((m) => m.id === msg.id)) {
-            return [...prevMessages, msg];
-          }
-          return prevMessages;
-        });
-      }, index * interval);
-    });
-  }, []);
-  useEffect(() => {
-    // Auto-scroll to the bottom of the chat when messages update
     if (messageEndRef.current) {
       messageEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages]);
 
   const handleSend = (text) => {
-    console.log(email);
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const newMessages = [];
+    const newMessages = [{ id: messages.length + 1, text, sender: "user" }];
 
-    if (emailPattern.test(text)) {
-      setEmail(text);
-      newMessages.push({ id: messages.length + 1, text, sender: "user" });
+    // Check if user is asking for products
+    if (text.toLowerCase().includes("show products")) {
+      setShowProducts(true);
       newMessages.push({
         id: messages.length + 2,
-        text: "Thanks! 🎉 You're now on the list for exciting updates. Expect to hear from us soon with all the latest news!",
+        text: "Here are some products for you!",
         sender: "system",
       });
     } else {
-      newMessages.push({ id: messages.length + 1, text, sender: "user" });
       newMessages.push({
         id: messages.length + 2,
-        text: "Please enter a valid email address.",
+        text: "I'm here to help!",
         sender: "system",
       });
     }
 
-    setMessages((prevMessages) => {
-      // Avoid adding duplicate messages
-      return [
-        ...prevMessages,
-        ...newMessages.filter(
-          (msg) => !prevMessages.some((m) => m.id === msg.id)
-        ),
-      ];
-    });
+    setMessages((prevMessages) => [...prevMessages, ...newMessages]); // Update message state
   };
 
   return (
@@ -109,13 +86,19 @@ const Chat = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3, delay: 0.1 }}>
-        {" "}
         {messages.map((msg) => (
           <ChatMessage key={msg.id} text={msg.text} sender={msg.sender} />
-        ))}{" "}
-        <div ref={messageEndRef} />{" "}
-      </motion.div>{" "}
-      <ChatFooter onSend={handleSend} />{" "}
+        ))}
+        <div ref={messageEndRef} />
+
+        {/* Display product carousel when showProducts is true */}
+        {showProducts && (
+          <div className={Styles.productCarouselContainer}>
+            <ProductCarousel products={ProductData} />
+          </div>
+        )}
+      </motion.div>
+      <ChatFooter onSend={handleSend} />
     </motion.div>
   );
 };

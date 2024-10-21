@@ -1,32 +1,63 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import styles from "./ProfileSection.module.css";
-import profileImage from "../../assets/Logo.png"; // Update with the path to your logo image
+import profileImage from "../../assets/Logo.png"; // Make sure the path is correct
 
-let mail = "info.tribetek@gmail.com";
+const ProfileSection = () => {
+  const [showOptions, setShowOptions] = useState(false);
 
-const ProfileSection = () => (
-  <motion.div
-    className={styles.ProfileSection}
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, ease: "easeOut" }}>
-    <div className={styles.profileContainer}>
-      <div className={styles.profileHeader}>
-        <img src={profileImage} alt="Profile" className={styles.profileImage} />{" "}
-        <div className={styles.profileName}> Aica </div>{" "}
-      </div>{" "}
-      <div className={styles.profileBio}>
-        Welcome!I’ m your Aica, here to make shopping easy by helping you find
-        and buy products through our conversation.{" "}
-      </div>{" "}
-      <div className={styles.profileContact}> {mail} </div>{" "}
-    </div>{" "}
-  </motion.div>
-);
+  const toggleOptions = () => {
+    setShowOptions((prev) => !prev);
+  };
 
-ProfileSection.propTypes = {};
+  return (
+    <div className={styles.profileSection}>
+      {/* Logo with hover effect */}
+      <motion.img
+        src={profileImage}
+        alt="Profile"
+        className={styles.profileImage}
+        whileHover={{
+          scale: 1.2,
+          boxShadow: "0px 0px 10px rgba(255, 255, 255, 0.8)",
+        }}
+        transition={{ duration: 0.3 }}
+        onClick={toggleOptions} // Toggle options on click
+      />
 
-ProfileSection.defaultProps = {};
+      {/* Animated options */}
+      <AnimatePresence>
+        {showOptions && (
+          <div className={styles.optionsContainer}>
+            <motion.div
+              className={styles.option}
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -100, opacity: 0 }}
+              transition={{ duration: 0.4 }}>
+              New Chat
+            </motion.div>
+            <motion.div
+              className={styles.option}
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -100, opacity: 0 }}
+              transition={{ duration: 0.4 }}>
+              Settings
+            </motion.div>
+            <motion.div
+              className={styles.option}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 100, opacity: 0 }}
+              transition={{ duration: 0.4 }}>
+              Logout
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
 
 export default ProfileSection;

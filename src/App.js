@@ -4,6 +4,9 @@ import "./App.css";
 import Profile from "./components/ProfileSection/ProfileSection";
 import ParticleRingBackground from "./components/ParticleRingBackground/ParticleRingBackground";
 import Chat from "./components/Chat/Chat";
+// src/index.js or src/App.js
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const [showProfile, setShowProfile] = useState(window.innerWidth >= 768);
